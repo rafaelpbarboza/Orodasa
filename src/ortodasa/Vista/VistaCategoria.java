@@ -63,9 +63,9 @@ public class VistaCategoria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel5.setText("Nombre");
+        jLabel5.setText("* Nombre");
 
-        jLabel6.setText("Descripcion");
+        jLabel6.setText("* Descripcion");
 
         txtDescripcionAdd.setColumns(20);
         txtDescripcionAdd.setRows(5);
@@ -119,15 +119,7 @@ public class VistaCategoria extends javax.swing.JFrame {
             new String [] {
                 "Id", "Nombre", "Descripcion"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(TablaGestion);
         if (TablaGestion.getColumnModel().getColumnCount() > 0) {
             TablaGestion.getColumnModel().getColumn(0).setResizable(false);

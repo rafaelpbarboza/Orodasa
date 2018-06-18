@@ -66,7 +66,7 @@ public class ModeloCategoria implements Crud{
             return o;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }            
+        }      
        return null;
     }
 

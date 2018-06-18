@@ -16,10 +16,13 @@ public class PojoCategoria {
     public PojoCategoria() {
     }
 
-    public PojoCategoria(int categoria_id, String nombre) {
+    public PojoCategoria(int categoria_id, String nombre, String descripcion) {
         this.categoria_id = categoria_id;
         this.nombre = nombre;
+        this.descripcion = descripcion;
     }
+
+    
 
     public String getDescripcion() {
         return descripcion;

@@ -38,6 +38,7 @@ public class Categoria implements ActionListener{
         vista.BtnGuardar.addActionListener(this);
         vista.BtnEliminar.addActionListener(this);
         vista.BtnConsultar.addActionListener(this);
+        vista.BtnGuardarGestion.addActionListener(this);
     }
     
 
@@ -93,8 +94,25 @@ public class Categoria implements ActionListener{
                 contruyeTabla(categoria);
             }
         }
+        else if (ae.getSource()==vista.BtnGuardarGestion){
+            comparador();
+        }
     }
     
+    public Boolean comparador(){
+        DefaultTableModel modelo=(DefaultTableModel)vista.TablaGestion.getModel();
+        
+        int filas=modelo.getRowCount();
+        int columnas=modelo.getColumnCount();
+        ArrayList<PojoCategoria>categorias=new ArrayList();
+        for(int i=0;i<=filas;i++){
+            for(int j=0;j<=columnas;j++){
+               // categorias.add(new PojoCategoria(modelo.getValueAt(i, j), nombre, descripcion))
+            }
+            
+        }
+        return true;
+    }
     public void contruyeTabla(PojoCategoria categoria){
         DefaultTableModel modelo = (DefaultTableModel) vista.TablaGestion.getModel();
         Object[]nu ={categoria.getCategoria_id(),categoria.getNombre(),categoria.getDescripcion()};
