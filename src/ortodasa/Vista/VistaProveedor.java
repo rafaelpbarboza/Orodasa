@@ -173,15 +173,6 @@ public class VistaProveedor extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(TablaProveedor);
-        if (TablaProveedor.getColumnModel().getColumnCount() > 0) {
-            TablaProveedor.getColumnModel().getColumn(0).setResizable(false);
-            TablaProveedor.getColumnModel().getColumn(1).setResizable(false);
-            TablaProveedor.getColumnModel().getColumn(2).setResizable(false);
-            TablaProveedor.getColumnModel().getColumn(3).setResizable(false);
-            TablaProveedor.getColumnModel().getColumn(4).setResizable(false);
-            TablaProveedor.getColumnModel().getColumn(5).setResizable(false);
-            TablaProveedor.getColumnModel().getColumn(6).setResizable(false);
-        }
 
         BtnConsultarProveedor.setText("Consultar");
 

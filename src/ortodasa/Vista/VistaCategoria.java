@@ -121,11 +121,6 @@ public class VistaCategoria extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(TablaGestion);
-        if (TablaGestion.getColumnModel().getColumnCount() > 0) {
-            TablaGestion.getColumnModel().getColumn(0).setResizable(false);
-            TablaGestion.getColumnModel().getColumn(1).setResizable(false);
-            TablaGestion.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         BtnConsultar.setText("Cosultar");
 
