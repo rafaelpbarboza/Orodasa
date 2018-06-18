@@ -7,6 +7,7 @@ package ortodasa;
 
 import java.sql.Connection;
 import ortodasa.Controlador.Categoria;
+import ortodasa.Controlador.Cliente;
 import ortodasa.Controlador.Proveedor;
 import ortodasa.Modelo.Conexion;
 
@@ -30,7 +31,7 @@ public class Ortodasa {
         */
         
         try{
-            Proveedor pro=new Proveedor();
+            Cliente pro=new Cliente();
         }
         catch (Exception e){
             System.out.println("Error general");
