@@ -32,6 +32,7 @@ public class Cliente implements ActionListener{
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
         vista.BtnGuardarCliente.addActionListener(this);
+        vista.BtnConsultarCliente.addActionListener(this);
        
     }
 
@@ -49,11 +50,18 @@ public class Cliente implements ActionListener{
                 PojoCliente cliente=new PojoCliente();
                 cliente.setIdentificacion(vista.TxtIdentificacionCliente.getText());
                 cliente.setNombre(vista.TxtNombreCliente.getText());
-                cliente.setTelefono(vista.TxtNombreCliente.getText());
+                cliente.setTelefono(vista.TxtTelefonoCliente.getText());
                 cliente.setEmail(vista.TxtMailCliente.getText());
                 cliente.setDireccion(vista.TxtDireccionCliente.getText());
                 Object objeto=(Object)cliente;
                 if(modelo.Guardar(objeto)){
+                    vista.TxtIdentificacionCliente.setText(null);
+                    vista.TxtNombreCliente.setText(null);
+                    vista.TxtTelefonoCliente.setText(null);
+                    vista.TxtMailCliente.setText(null);
+                    vista.TxtDireccionCliente.setText(null);
+                    
+                           
                     JOptionPane.showMessageDialog(vista, "Guardado con exito");
                 }
                 else{
