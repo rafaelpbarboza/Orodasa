@@ -24,7 +24,7 @@ public class ModeloProveedor implements Crud{
     ArrayList<PojoProveedor> proveedores;
 
     public ModeloProveedor() throws SQLException, ClassNotFoundException {
-        this.conexion = Conexion.obtener();
+      // conexion = Conexion.obtener();
     }
     
     
@@ -47,6 +47,7 @@ public class ModeloProveedor implements Crud{
 
     @Override
     public ArrayList<Object> listar() {
+        /*
         Statement s = null; 
         proveedores=new ArrayList();
         try {
@@ -72,6 +73,25 @@ public class ModeloProveedor implements Crud{
             System.out.println(ex.getMessage());
         }      
        return null;
+       */
+        ArrayList<Object> o=new ArrayList();
+        PojoProveedor proveedor=new PojoProveedor(0,"Casa de la ortodoncia","30022222","3333330333330","barboza.rafael.p", 
+                "", "");
+        PojoProveedor proveedor2=new PojoProveedor(2,"Clinica madre bernalda","30022222","3333330333330","barboza.rafael.p", 
+                "", "");
+        PojoProveedor proveedor3=new PojoProveedor(3,"La casa","30022222","3333330333330","barboza.rafael.p", 
+                "", "");
+        PojoProveedor proveedor4=new PojoProveedor(4,"Los locos adans","30022222","3333330333330","barboza.rafael.p", 
+                "", "");
+        
+        o.add(proveedor);
+        o.add(proveedor2);
+        o.add(proveedor3);
+        o.add(proveedor4);
+        return o;
+        
+        
+        
     }
 
     @Override

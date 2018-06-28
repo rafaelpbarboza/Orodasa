@@ -8,6 +8,7 @@ package ortodasa;
 import java.sql.Connection;
 import ortodasa.Controlador.Categoria;
 import ortodasa.Controlador.Cliente;
+import ortodasa.Controlador.Producto;
 import ortodasa.Controlador.Proveedor;
 import ortodasa.Modelo.Conexion;
 
@@ -31,10 +32,10 @@ public class Ortodasa {
         */
         
         try{
-            Cliente pro=new Cliente();
+            Producto p=new Producto();
         }
         catch (Exception e){
-            System.out.println("Error general");
+            System.out.println("Error general "+e.getMessage());
         }
         
         
