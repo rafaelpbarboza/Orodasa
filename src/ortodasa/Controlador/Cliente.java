@@ -33,7 +33,7 @@ public class Cliente implements ActionListener{
         vista.setVisible(true);
         vista.BtnGuardarCliente.addActionListener(this);
         vista.BtnConsultarCliente.addActionListener(this);
-       
+        vista.BtnEliminarCliente.addActionListener(this);
     }
 
     @Override
@@ -71,13 +71,32 @@ public class Cliente implements ActionListener{
                     
         }
         if(e.getSource()==vista.BtnConsultarCliente){
-            ArrayList<Object> objetos=new ArrayList();
-            objetos=modelo.listar();
+            ArrayList<Object> objetos=modelo.listar();
             eliminar((DefaultTableModel)vista.TablaCliente.getModel());
            
             for(Object o:objetos){
                 PojoCliente cliente=(PojoCliente)o;
                 contruyeTabla(cliente);
+            }
+        }
+        if(e.getSource()==vista.BtnEliminarCliente){
+            int fila=vista.TablaCliente.getSelectedRow();
+            if(fila!=-1){
+                PojoCliente cliente=new PojoCliente();
+                cliente.setCliente_id(Integer.parseInt(vista.TablaCliente.getModel()
+                        .getValueAt(fila,0).toString()));
+                Object objeto=(Object)cliente;
+                int codigo=JOptionPane.showConfirmDialog(vista,"Esta seguro de eliminar registro? ",
+                        "Eliminar registro", JOptionPane.WARNING_MESSAGE);
+                if(codigo==0)
+                    if(modelo.eliminar(objeto)){
+                          vista.BtnConsultarCliente.doClick();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(vista, "Error al eliminar ");
+                    }
+            }else{
+                JOptionPane.showMessageDialog(vista, "No se selecciono ningun registro");
             }
         }
         
@@ -99,6 +118,7 @@ public class Cliente implements ActionListener{
         for (int i = 0; i < vista.TablaCliente.getRowCount(); i++) {
             modelo.removeRow(i);
             i-=1;
+            System.out.println(i);
         }
     }
     

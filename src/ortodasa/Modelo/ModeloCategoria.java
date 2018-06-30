@@ -25,7 +25,7 @@ public class ModeloCategoria implements Crud{
     ArrayList<PojoCategoria> categorias;
 
     public ModeloCategoria() throws SQLException, ClassNotFoundException {
-     //   this.conexion = Conexion.obtener();
+      this.conexion = Conexion.obtener();
     }
     
 
@@ -49,17 +49,7 @@ public class ModeloCategoria implements Crud{
     public ArrayList<Object> listar() {
         ArrayList<Object> o=new ArrayList();
         
-        PojoCategoria c=new PojoCategoria(0,"Zona Blanda", "");        
-        PojoCategoria c2=new PojoCategoria(0,"Zona ", "");        
-        PojoCategoria c3=new PojoCategoria(0,"Conford", "");
-        PojoCategoria c4=new PojoCategoria(0,"Z", "");        
-        o.add(c);
-        o.add(c2);
-        o.add(c3);
-        o.add(c4);
-        return o;
-        
-        /*
+      
         Statement s = null; 
         categorias=new ArrayList();
         try {
@@ -74,14 +64,13 @@ public class ModeloCategoria implements Crud{
               
             }
             rs.close();
-            ArrayList<Object> o=new ArrayList();
             o.addAll(categorias);
             return o;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }      
        return null;
-        */
+        
     }
 
     @Override
